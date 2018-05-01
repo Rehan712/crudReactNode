@@ -18,7 +18,8 @@ export async function youtube(query) {
 export async function studentHrData() {
 
   const body=await fetch('/students');
-  const response=await body.json()
+  const response=await body.json();
+  return response;
   // const data = [
   //   {
   //     computerNumber: 1,

@@ -1,5 +1,3 @@
 module.exports= app => {
-	app.get('/students',(req,res)=>{
-		res.json('./data.js')
-	})
+	app.get('/students',require('../handlers/getStudentsHandler.js'))
 }

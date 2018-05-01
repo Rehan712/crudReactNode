@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 
-import App from './components/App';
+import RouterApp from './components/RouterApp';
 import rootReducer from './reducers';
 import rootSaga from './sagas';
 
@@ -21,7 +21,7 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <RouterApp />
   </Provider>,
   document.querySelector('#app')
 );

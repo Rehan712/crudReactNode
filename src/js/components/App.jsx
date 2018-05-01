@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { func, shape, arrayOf, string, bool, any } from 'prop-types';
+import StudentsData from './StudentsData';
+import Header from './Header'
 
 import * as actions from '../actions';
 
@@ -27,10 +29,10 @@ export class App extends React.Component {
     const { data, isLoading, error } = this.props;
 
     return (
-      <div className="app">
-        {`data retreived is ${JSON.stringify(data)}, ${isLoading}, ${error &&
-          error.message}`}
-      </div>
+        <div className="app">
+          <Header data={data} />
+          <StudentsData data={data} />
+        </div>
     );
   }
 }
