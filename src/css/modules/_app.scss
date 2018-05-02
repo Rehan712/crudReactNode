@@ -1,27 +1,23 @@
-.app{
-	font-family:Roboto;
-	width:100%;
-	display:flex;
-	flex-direction:column;
-	justify-content:flex-start;
+.app {
+	font-family: Roboto;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 
-	.header{
-		height:80px;
-		width:100%;
-		display:flex;
-		flex-direction:row;
-		justify-content:space-around;
-		background-color:red;
-		flex-wrap:wrap;
-		.textSearchName{
-			flex-basis:400px;
-			background-color:blue;
+	.header {
+		height: 80px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		.textSearchName {
+			flex-basis: 400px;
 		}
-		.textSearchRollNo{
-			flex-basis:400px;
-			background-color:orange;
+		.textSearchRollNo {
+			flex-basis: 400px;
 		}
-
 	}
 	// .students{
 	// 	width:100%;
@@ -29,47 +25,44 @@
 	// 	flex-direction:column;
 	// 	height:500px;
 	// 	background-color:orange;
-		.studentsSummary{
-			display:flex;
-			justify-content:space-around;
-			width:100%;
-			p{
-				width:120px;
-				color:black;
-			}
+	.studentsSummary {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		p {
+			width: 120px;
+			color: black;
 		}
-	//}	
-	.studentDetails{
-		display:flex;
-		flex-direction:column;
-		width:100%;
-		background-color:orange;
-		align-items:space-around;
-		.details{
-			display:flex;
-			flex-direction:row;
-			background-color:grey;
-			width:100%;
-			.colHeading{
-				display:flex;
-				flex-direction:column;
-				h3{
-					width:400px;
-
+	}
+	//}
+	.studentDetails {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		align-items: space-around;
+		.details {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			.colHeading {
+				display: flex;
+				flex-direction: column;
+				h3 {
+					width: 400px;
 				}
 			}
-			.colItem{
-				display:flex;
-				flex-direction:column;
+			.colItem {
+				display: flex;
+				flex-direction: column;
 				align-self: stretch;
-				p{
-					width:400px;
-					margin-left:20px;
+				p {
+					width: 400px;
+					margin-left: 20px;
 				}
 			}
 		}
-		.btn{
-			align-self:flex-end;
+		.btn {
+			align-self: flex-end;
 		}
 	}
 }
