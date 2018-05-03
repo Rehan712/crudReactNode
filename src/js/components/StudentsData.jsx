@@ -19,10 +19,14 @@ class StudentsData extends React.Component {
 		this.state = {
 			class: 'Select Class',
 			section: 'Select Section',
-			subject: 'Select Subject'
+			subject: 'Select Subject',
+			display: 'none'
 		};
 	}
-
+	convertToDate(str) {
+		const myDate = new Date(str);
+		return myDate;
+	}
 	renderStudentsData(item, str) {
 		if (arguments[1] === 'keys') {
 			return Object.keys(item).map((key, index) => {
@@ -104,13 +108,21 @@ class StudentsData extends React.Component {
 										)}
 									</div>
 								</div>
-								<div className="btn">
+								<div
+									className="btn"
+									onClick={() => {
+										this.setState({ display: 'flex' });
+									}}
+								>
 									<Button variant="fab" color="secondary" aria-label="edit">
 										<Icon>edit_icon</Icon>
 									</Button>
 								</div>
 							</div>
-							<div className="studentForm">
+							<div
+								className="studentForm"
+								style={{ display: this.state.display }}
+							>
 								<div className="heading">
 									<p>Student Details</p>
 								</div>
@@ -121,6 +133,7 @@ class StudentsData extends React.Component {
 											label="Name"
 											type="search"
 											required
+											value={item.studentHR.studentDetails.studentName}
 										/>
 									</div>
 									<div className="textFields">
@@ -128,31 +141,46 @@ class StudentsData extends React.Component {
 											id="studentRollNo"
 											label="Roll No"
 											type="search"
+											value={item.studentHR.studentDetails.bForm}
 											required
 										/>
 									</div>
 									<div className="textFields">
-										<TextField id="studentDob" type="date" required />
+										<TextField
+											id="studentDob"
+											type="date"
+											required
+											value={this.convertToDate(
+												item.studentHR.studentDetails.dob
+											)}
+										/>
 									</div>
 									<div className="textFields">
 										<TextField
-											id="studentAddress"
-											label="Address"
+											id="studentIdMark"
+											label="Id Mark"
 											multiline
 											rowsMax="4"
 											required
+											value={item.studentHR.studentDetails.idMark}
 										/>
 									</div>
 									<div className="textFields" style={{ color: 'red' }}>
 										<span>Hafiz</span>
-										<Checkbox label="Hafiz" />
+										<Checkbox
+											label="Hafiz"
+											defaultChecked={item.studentHR.studentDetails.hafiz}
+										/>
 									</div>
 									<div className="textFields" style={{ color: 'red' }}>
 										<span>&nbsp;</span>
 									</div>
 								</div>
 							</div>
-							<div className="studentForm">
+							<div
+								className="studentForm"
+								style={{ display: this.state.display }}
+							>
 								<div className="heading">
 									<p>Father Details</p>
 								</div>
@@ -163,6 +191,7 @@ class StudentsData extends React.Component {
 											label="Name"
 											type="search"
 											required
+											value={item.studentHR.fatherDetails.fatherName}
 										/>
 									</div>
 									<div className="textFields">
@@ -170,6 +199,7 @@ class StudentsData extends React.Component {
 											id="fatherCnic"
 											label="Cnic"
 											type="number"
+											value={item.studentHR.fatherDetails.fatherCnic}
 											required
 										/>
 									</div>
@@ -178,6 +208,7 @@ class StudentsData extends React.Component {
 											id="phoneNo"
 											label="Phone"
 											type="number"
+											value={item.studentHR.fatherDetails.fatherMobile}
 											required
 										/>
 									</div>
@@ -187,13 +218,17 @@ class StudentsData extends React.Component {
 											label="Address"
 											multiline
 											rowsMax="4"
+											value={item.studentHR.fatherDetails.fatherAddress}
 											required
 										/>
 									</div>
 								</div>
 							</div>
 
-							<div className="studentForm">
+							<div
+								className="studentForm"
+								style={{ display: this.state.display }}
+							>
 								<div className="heading">
 									<p>Class Details</p>
 								</div>
@@ -203,6 +238,7 @@ class StudentsData extends React.Component {
 											id="addmissionNo"
 											label="Addmission No"
 											type="search"
+											value={item.studentHR.classDetails.addmissionNo}
 											required
 										/>
 									</div>
@@ -263,7 +299,10 @@ class StudentsData extends React.Component {
 								</div>
 							</div>
 
-							<div className="studentForm">
+							<div
+								className="studentForm"
+								style={{ display: this.state.display }}
+							>
 								<div className="heading">
 									<p>Emergency Details</p>
 								</div>
